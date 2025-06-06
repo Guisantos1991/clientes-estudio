@@ -380,32 +380,49 @@ async function loadNextTen() {
   renderAgendaClientes(docs);
 }
 
+// FUNÇÕES UTILITÁRIAS
+const getValue = (id: string): string => {
+  const el = document.getElementById(id) as HTMLInputElement | null;
+  return el?.value.trim() || "";
+};
+
+const getNumber = (id: string): number => {
+  const el = document.getElementById(id) as HTMLInputElement | null;
+  return el ? parseFloat(el.value) || 0 : 0;
+};
+
+const getDate = (id: string): Timestamp => {
+  const el = document.getElementById(id) as HTMLInputElement | null;
+  return el ? Timestamp.fromDate(new Date(el.value)) : Timestamp.now();
+};
+
 // === Envia novo cliente para o Firebase ===
 const formCliente = document.getElementById("formCliente") as HTMLFormElement | null;
+
 formCliente?.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  const nomeCrianca = (document.getElementById("nomeCrianca") as HTMLInputElement).value.trim();
-  const nomeResponsavel = (document.getElementById("nomeResponsavel") as HTMLInputElement).value.trim();
-  const dataNascimento = Timestamp.fromDate(new Date((document.getElementById("dataNascimento") as HTMLInputElement).value));
-  const telefone = (document.getElementById("telefone") as HTMLInputElement).value.trim();
-  const email = (document.getElementById("email") as HTMLInputElement).value.trim();
-  const dataCadastro = Timestamp.fromDate(new Date((document.getElementById("dataCadastro") as HTMLInputElement).value));
-  const atendente = (document.getElementById("atendente") as HTMLInputElement).value.trim();
-  const obs = (document.getElementById("obs") as HTMLInputElement).value.trim();
-  const ensaios = (document.getElementById("ensaios") as HTMLSelectElement).value;
-  const dataEnsaio = Timestamp.fromDate(new Date((document.getElementById("dataEnsaio") as HTMLInputElement).value));
-  const album = (document.getElementById("album") as HTMLSelectElement).value;
-  const valorAlbum = parseFloat((document.getElementById("valorAlbum") as HTMLInputElement).value) || 0;
-  const quantidadeFotos = parseInt((document.getElementById("quantidadeFotos") as HTMLInputElement).value) || 0;
-  const fotosExtras = parseFloat((document.getElementById("quantidadeFotosExtras") as HTMLInputElement).value) || 0;
-  const valorEnsaio = parseFloat((document.getElementById("valorEnsaio") as HTMLInputElement).value) || 0;
-  const quantidadeParcelas = parseInt((document.getElementById("quantidadeParcelas") as HTMLInputElement).value) || 0;
-  const valorPagamento = parseFloat((document.getElementById("valorPagamento") as HTMLInputElement).value) || 0;
-  const fotografo = (document.getElementById("fotografo") as HTMLInputElement).value.trim();
+  const nomeCrianca = getValue("nomeCrianca");
+  const nomeResponsavel = getValue("nomeResponsavel");
+  const dataNascimento = getDate("dataNascimento");
+  const telefone = getValue("telefone");
+  const email = getValue("email");
+  const dataCadastro = getDate("dataCadastro");
+  const atendente = getValue("atendente");
+  const fotografo = getValue("fotografo");
+  const obs = getValue("obs");
+  const ensaios = (document.getElementById("ensaios") as HTMLSelectElement)?.value || "";
+  const dataEnsaio = getDate("dataEnsaio");
+  const album = (document.getElementById("album") as HTMLSelectElement)?.value || "";
+  const valorAlbum = getNumber("valorAlbum");
+  const quantidadeFotos = parseInt(getValue("quantidadeFotos")) || 0;
+  const fotosExtras = parseInt(getValue("quantidadeFotosExtra")) || 0;
+  const valorEnsaio = getNumber("valorEnsaio");
+  const valorExtras = getNumber("valorExtras");
+  const quantidadeParcelas = parseInt(getValue("quantidadeParcelas")) || 0;
+  const valorPagamento = getNumber("valorPagamento");
   const dataPagamento = dataCadastro;
-  const valorVenda = valorAlbum + fotosExtras + valorEnsaio;
-  const valorExtra = (document.getElementById("valorExtra") as HTMLInputElement).value || 0;
+  const valorVenda = valorAlbum + valorExtras + valorEnsaio;
 
   try {
     await addDoc(collection(db, "clientes"), {
@@ -424,11 +441,11 @@ formCliente?.addEventListener("submit", async (event) => {
       quantidadeFotos,
       fotosExtras,
       valorEnsaio,
+      valorExtras,
       valorVenda,
       quantidadeParcelas,
       fotografo,
       valorPagamento,
-      valorExtra,
       statusEnsaio: "Pendente",
       statusPagamento: "Pendente",
       dataPagamento,
@@ -440,8 +457,10 @@ formCliente?.addEventListener("submit", async (event) => {
     loadNextTen();
   } catch (error) {
     console.error("Erro ao salvar no Firestore:", error);
+    alert("Erro ao salvar o cliente. Verifique os dados e tente novamente.");
   }
 });
+
 
 // === Search Filter ===
 const searchInput = document.getElementById("searchValue") as HTMLInputElement;
