@@ -1,7 +1,7 @@
 // === Firebase Setup ===
 import { initializeApp } from "firebase/app";
 import {
-  getFirestore, collection, addDoc,
+  getFirestore, collection, addDoc, onSnapshot, getDoc,
   query, where, orderBy, limit, getDocs, doc, Timestamp, updateDoc
 } from "firebase/firestore";
 
