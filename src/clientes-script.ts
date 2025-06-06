@@ -1,7 +1,7 @@
 // === Firebase Setup ===
 import { initializeApp } from "firebase/app";
 import {
-  getFirestore, collection, addDoc, onSnapshot, getDoc,
+  getFirestore, collection, addDoc, getDoc,
   query, where, orderBy, limit, getDocs, doc, Timestamp, updateDoc
 } from "firebase/firestore";
 
@@ -322,9 +322,12 @@ const pagamentoFormatted = (data.dataPagamento instanceof Timestamp
 
       try {
         await updateDoc(doc(db, "clientes", data.id), updatedData);
-        // Merge updatedData into data for re-render
-        const newData = {...data, ...updatedData};
-        renderCard(newData);
+        const docRef = doc(db, "clientes", data.id);
+        const updatedSnap = await getDoc(docRef);
+        if (updatedSnap.exists()) {
+          const newData = { id: updatedSnap.id, ...updatedSnap.data() };
+          renderCard(newData);
+        }
       } catch (error) {
         console.error("Erro ao atualizar no Firestore:", error);
         alert("Erro ao salvar as alterações.");
