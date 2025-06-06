@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=raddley:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Radley:ital@0;1&display=swap');
+
+.cardBody {
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+  font-family: 'raddley', sans-serif;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+}
+.items--center {
+  align-items: center;
+}
+.flex--column {
+  flex-direction: column;
+}
+.flex--row {
+  flex-direction: row;
+}
+.justify--center {
+  justify-content: center;
+}
+.gap--10 {
+  gap: 10px;
+}
+
+.card-content {
+  padding: 20px;
+  width: 900px;
+  height: 900px;
+}
+
+.top-card {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  background-color: blueviolet;
+  padding: 10px 20px;
+  box-shadow: 2px 4px 12px rgba(1, 1, 0, 0.5);
+  border-radius: 6px;
+}
+
+.name-text {
+  display: flex;
+  flex: 2;
+}
+.type-ensaio {
+  display: flex;
+  flex: 1;
+  width: 250px;
+  height: 90px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: rgb(174, 145, 255);
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+}
+
+.nomeCrianca {
+  font-family: 'raddley', sans-serif;
+  font-size: 50px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.mid-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 4;
+  height: 400px;
+  gap: 10px;
+  padding: 10px;
+}
+
+.mid-info {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(174, 145, 255);
+  width: 100%;
+  height: 200px;
+  align-items: center;
+  justify-content: start;
+  padding: 15px;
+  gap: 45px;
+  border-radius: 40px;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 1px;
+  padding: 5px;
+}
+.info-box label {
+  font-family: 'raddley', sans-serif;
+  font-size: 15px;
+  font-weight: 200;
+  border-bottom: 5px solid black;
+}
+.fotos-extras {
+  font-family: 'raddley', sans-serif;
+  font-size: 15px;
+  font-weight: 200;
+}
+.info-text {
+  font-family: 'raddley', sans-serif;
+  font-size: 30px;
+  background-color: whitesmoke;
+  padding: 5px 10px;
+  box-shadow: rgb(176, 252, 252) 2px 2px 1px 1px;
+}
+.info-text--2 {
+  font-family: 'raddley', sans-serif;
+  font-size: 30px;
+  background-color: whitesmoke;
+  padding: 5px 10px;
+  box-shadow: rgb(176, 252, 252) 2px 2px 1px 1px;
+  width: 100px;
+}
+
+.bottom-card {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  background-color: rgb(230, 181, 255);
+}
+.valorTotal {
+  font-family: 'raddley', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000000;
+}
+.div--tel a {
+  text-decoration: none;
+  font-size: 30px;
+  color: #000000;
+  font-weight: 600;
+  font-family: 'raddley', sans-serif;
+  background-color: whitesmoke;
+  box-shadow: rgb(176, 252, 252) 2px 2px 1px 1px;
+  padding: 5px 10px;
+}
+
+.whats--image {
+  width: 35px;
+  height: 60px;
+}
+.whatsapp-icon {
+  width: 30px;
+  height: 30px;
+}
+.tipoEnsaio {
+  width: 190px;
+  font-family: 'raddley', sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+  background-color: whitesmoke;
+  box-shadow: rgb(176, 252, 252) 2px 2px 1px 1px;
+  padding: 10px 30px;
+}
+
+#cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+#logo {
+  width: 100%;
+  height: 100px;
+  background-color: aqua;
+}
+#clientCalendar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+#searchBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  padding: 20px;
+  gap: 10px;
+}
+#btnSearch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+#searchIcon {
+  width: 25px;
+  height: 25px;
+  background: rgb(230, 181, 255);
+  border-radius: 50%;
+  padding: 10px;
+}
+#searchValue {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 50px;
+  background-color: #fdf0d5;
+  color: black;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  padding: 5px 20px;
+  font-family: 'raddley', sans-serif;
+  font-size: 20px;
+}
+
+#calendarCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 200px;
+  background-color: #fdf0d5;
+  font-size: 15px;
+  gap: 10px;
+  font-family: 'raddley', sans-serif;
+  border-radius: 20px;
+  margin: 20px 20px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+#calendarBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* NOVOS ESTILOS PARA OS 10 CLIENTES EM 2 LINHAS */
+#agendaDeClientes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.agenda-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+#editSaveBtn {
+  width: 200px;
+  padding: 10px 20px;
+  background: #f1eef3;
+  border: none;
+  z-index: 1;
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'raddley', sans-serif;
+  transition: all 0.3s ease;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+#editSaveBtn:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #414bff;
+  opacity: 0.8;
+  border-radius: 5px;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  transition: all 0.3s ease;
+}
+#editSaveBtn:hover {
+  color: #fff;
+}
+#editSaveBtn:hover:after {
+  left: 0;
+  width: 100%;
+}
+#editSaveBtn:active {
+  top: 2px;
+}

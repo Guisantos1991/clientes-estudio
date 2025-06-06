@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/cardStyles.css">
+    <link rel="stylesheet" href="./src/styles.css">
+    <title>Document</title>
+</head>
+<body class="cardBody">
+
+
+    <div id="header">
+        <nav>
+    <div>
+      <img src="./public/images/logo.png" alt="Logo Estúdio Jessica Casassanta" width="180px" />
+    </div>
+    <ul>
+      <li><a href="index.html">Cadastro/Venda</a></li>
+      <li><a href="clientes.html">Clientes</a></li>
+    </ul>
+  </nav>
+    </div>
+
+        <div id="agendaDeClientes">
+            <div id="agendaRow1" class="agenda-row flex"></div>
+            <div id="agendaRow2" class="agenda-row"></div>
+        </div>
+
+        
+
+
+
+
+
+
+
+
+        <div id="searchBar">
+            <input type="text" id="searchValue" name="searchValue" value="" placeholder="Buscar cliente"/>
+            <button id="btnSearch"><img id="searchIcon" class="icon" src="./public/icons/search.svg" alt=""></button>  
+        </div>
+
+    
+    <div id="cardContainer">
+    <div id="clientsContainer">
+
+
+
+    </div>
+    </div>
+
+    <script type="module" src="./src/clientes-script.ts"></script>
+</body>
+</html>

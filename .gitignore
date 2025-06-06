@@ -1,0 +1,33 @@
+# node_modules
+node_modules/
+
+# arquivos de build
+dist/
+build/
+.next/
+out/
+
+# ambientes
+.env
+.env.*.local
+
+# sistemas operacionais
+.DS_Store
+Thumbs.db
+
+# log e cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.cache/
+.vite/
+
+# VSCode configs
+.vscode/
+
+# coverage de testes
+coverage/
+
+# arquivos do Mac
+*.DS_Store
