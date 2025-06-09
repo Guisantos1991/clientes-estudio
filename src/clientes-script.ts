@@ -1,3 +1,7 @@
+import './styles.css';
+import './cardStyles.css';
+
+
 // === Firebase Setup ===
 import { initializeApp } from "firebase/app";
 import {
