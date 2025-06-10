@@ -488,10 +488,4 @@ btnSearch?.addEventListener("click", async () => {
 // === Inicialização ===
 loadNextTen();
 
-const staticLogo = document.getElementById("logo") as HTMLElement;
-const img = document.createElement("img");
-img.src = "/images/logo.png";
-img.alt = "Logo";
-staticLogo.appendChild(img);
-
 
